@@ -2,10 +2,37 @@
 
 
 // scroll sections
+let sections = document.querySelectorAll('section');
+let navtlinks = document.querySelectorAll('header nav a');
+
 
 window.onscroll = () =>{
-    //sticky header
-    let header = document.querySelectorAll('header');
+  sections.forEach(sec =>{
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 100;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-    header.classList.toggle('sticky', window.scrollY > 100);
+    if(top >= offset && top < offset + height){
+        // active navbar links
+        navtlinks.forEach(links =>{
+            links.classList.remove('active');
+            document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
+        });
+    }
+  });
+
+
+
+
+
+
+
+
+
+    //sticky header
+    
+    // let header = document.querySelectorAll('header');
+
+    // header.classList.toggle('sticky', window.scrollY > 100);
 }
