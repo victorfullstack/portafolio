@@ -276,6 +276,7 @@ width: 100%;
 }
 
 .heading{
+    position: relative;
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -318,9 +319,11 @@ span{
     text-align: center;
 }
 .about-content h3{
+    position: relative;
     font-size: 2.6rem;
 }
 .about-content p{
+    position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 
@@ -660,6 +663,9 @@ width: 100%;
 .animate.home-img{
     width: 50%;
 }
+section:nth-child(odd) .animate.scroll{
+    background: var(--second-bg-color);
+}
 
 .logo .animate,
 .navbar .animate,
@@ -667,6 +673,17 @@ width: 100%;
 .home.show-animate .animate{
     animation: showright 1s ease forwards;
     animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll{
+    transition: 1s ease;
+    transition-delay: calc(.3s / var(--i));
+    animation: none;
+}
+
+.about.show-animate .animate.scroll{
+    transition-delay:calc(.3s * var(--i));
+    width: 0;
 }
 
 /* respons */
