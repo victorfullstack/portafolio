@@ -40,9 +40,6 @@ window.onscroll = () =>{
 
 
 
-
-
-
     //sticky header
     
     // let header = document.querySelectorAll('header');
